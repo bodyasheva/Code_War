@@ -1,0 +1,27 @@
+def inside_out(st)->str:
+    st = st.split(" ")
+    for i in range(len(st)):
+        if len(st[i]) > 3 and len(st[i]) % 2 == 0:
+            len_word = int((len(st[i]))/ 2)
+            word = ""
+            first_symbol = st[i][0:len_word]
+            first_symbol = first_symbol[::-1]
+            word += first_symbol
+            second_symbol = st[i][len_word:]
+            second_symbol = second_symbol[::-1]
+            word += second_symbol
+            st[i] = word
+        elif len(st[i]) > 3 and len(st[i]) % 2 != 0:
+            len_word = int((len(st[i])-1) / 2)
+            word = ""
+            first_symbol = st[i][0:len_word]
+            first_symbol = first_symbol[::-1]
+            word += first_symbol
+            second_symbol = st[i][len_word]
+            word += second_symbol
+            third_symbol = st[i][len_word+1:]
+            third_symbol = third_symbol[::-1]
+            word += third_symbol
+            st[i] = word
+    res = ' '.join(st)
+    return res
