@@ -1,0 +1,13 @@
+def triangle_type(a, b, c):
+    list = sorted([a, b, c])
+    small = list[0]
+    middle = list[1]
+    big = list[2]
+    if small + middle > big and middle + big > small and big + small > middle:
+        if (big**2) == (small**2) + (middle**2):
+            return 2
+        elif (small**2) + (middle**2) > (big**2):
+            return 1
+        else:
+            return 3
+    return 0
