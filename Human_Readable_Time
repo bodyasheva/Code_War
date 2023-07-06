@@ -1,0 +1,14 @@
+def make_readable(seconds):
+    sec = seconds % 60
+    seconds -= sec
+    min = seconds / 60
+    min_res = int(min % 60)
+    min -= min_res
+    hour = int(min / 60)
+    if hour < 10:
+        hour = "0" + str(hour)
+    if min_res < 10:
+        min_res = "0" + str(min_res)
+    if sec < 10:
+        sec = "0" + str(sec)
+    return f"{hour}:{min_res}:{sec}"
